@@ -1,0 +1,6 @@
+const Notfound = () => {
+  return (
+    <div><h1>P A G E   N O T    F O U N D</h1></div>
+  )
+}
+export default Notfound

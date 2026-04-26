@@ -1,4 +1,11 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Dashboard from "../pages/admin/Dashboard";
+import Manage from "../pages/admin/Manage";
+import Notfound from "../pages/Notfound";
+import Layout from "../layouts/Layout";
+import LayoutAdmin from "../layouts/LayoutAdmin";
 
 const AppRoutes = () => {
     return (
@@ -6,19 +13,21 @@ const AppRoutes = () => {
             <Routes>
 
                 {/* test  public  page  not  login */}
-                <Route path="/" element={   <h6>Home</h6>   } />
+                <Route element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="about" element={<About />} />
+                </Route>
 
 
                 {/* test  private  page  request !! login  +  รูปแบบ path group  */}
-                <Route path="admin" element={ <> <h1> n a v b a r </h1> <Outlet /> </>} >  
-                    <Route index            element={   <h6>admin</h6>   } />
-                    <Route path="dashboard" element={   <h6>dashboard</h6>   } />
-                    <Route path="manager"   element={   <h6>manager</h6>   } />
+                <Route path="admin" element={ <LayoutAdmin /> } >  
+                    <Route index            element={   <Dashboard />  } />
+                    <Route path="manage"   element={   <Manage />  } />
                 </Route>
                 
 
                 {/* test  page not found */}
-                <Route path="*" element={   <h6>PAGE  NOT  FOUND</h6>   } />
+                <Route path="*" element={  <Notfound />  } />
 
             </Routes>
         </BrowserRouter>
