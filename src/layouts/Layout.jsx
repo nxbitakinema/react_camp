@@ -1,13 +1,14 @@
-import { Outlet } from "react-router"
+import { Outlet } from "react-router";
+import Navbar from "../components/navbar/Navbar";
 
 const Layout = () => {
   return (
     <div>
-        layout  main  navbar
+      <Navbar />
 
-         {/*  Outlet  ไม่ใช่หน้าเป็นตัวโชว์ content ในหน้านั้นๆ */}
-        <Outlet />    
+      {/*  Outlet  ไม่ใช่หน้าเป็นตัวโชว์ content ในหน้านั้นๆ */}
+      <Outlet />
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;
