@@ -6,8 +6,10 @@ const Layout = () => {
     <div>
       <Navbar />
 
+      <hr />
       {/*  Outlet  ไม่ใช่หน้าเป็นตัวโชว์ content ในหน้านั้นๆ */}
       <Outlet />
+      
     </div>
   );
 };

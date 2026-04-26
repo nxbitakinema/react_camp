@@ -1,12 +1,14 @@
+import DropdownListMenu from "./DropdownListMenu";
 import Logo from "./Logo";
+import Searchbar from "./Searchbar";
 
 const Navbar = () => {
   return (
     <nav>
       <div className="flex flex-col justify-between py-4 px-8 sm:flex-row gap-4">
         <Logo />
-        <h1>search</h1>
-        <h1>profile</h1>
+        <Searchbar />
+        <DropdownListMenu />
       </div>
     </nav>
   );
