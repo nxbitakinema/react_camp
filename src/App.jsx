@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
-    <div>
-      <Button variant="ghost" size="sm">Click me</Button>
-    </div>
+    <>
+      <AppRoutes />
+    </>
   )
 }
 export default App
