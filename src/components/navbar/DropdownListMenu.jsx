@@ -1,43 +1,39 @@
 import {
-  CreditCardIcon,
-  LogOutIcon,
-  SettingsIcon,
-  UserIcon,
-} from "lucide-react";
-import { Link } from "react-router";
-
-import { Button } from "@/components/ui/button";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Menu } from "lucide-react";
+import UserIcon from "./UserIcon";
+import { Button } from "../ui/button";
+import { links } from "../../utils/links";
+import { Link } from "react-router";
 
 const DropdownListMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">menu</Button>
+        <Button variant="outline">
+          <Menu />
+          <UserIcon />
+        </Button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent>
-        <DropdownMenuItem asChild>
-          <Link to="/about"><UserIcon />About</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <CreditCardIcon />
-          <Link to="/billing">Billing</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <SettingsIcon />
-          <Link to="/settings">Settings</Link>
-        </DropdownMenuItem>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">
-          <LogOutIcon />
-          Log out
-        </DropdownMenuItem>
+
+        {links.map((item, index) => {
+          return (
+            <DropdownMenuItem key={index}>
+              <Link to={item.href}>{item.label}</Link>
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );
