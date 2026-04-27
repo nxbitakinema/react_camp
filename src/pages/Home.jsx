@@ -1,10 +1,20 @@
-
+import {
+  Show,
+  SignInButton,
+  SignInWithMetamaskButton,
+  SignOutButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/react";
 
 const Home = () => {
   return (
     <>
-      <h1>home</h1>
+    HOME
+        
+        
     </>
-  )
-}
-export default Home
+  );
+};
+
+export default Home;

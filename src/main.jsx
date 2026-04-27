@@ -6,7 +6,11 @@ import { ClerkProvider } from '@clerk/react'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider>
+    <ClerkProvider
+      signInForceRedirectUrl='/'
+      signUpForceRedirectUrl='/'
+      afterSignOutUrl='/'
+    >
 
       <App />
 

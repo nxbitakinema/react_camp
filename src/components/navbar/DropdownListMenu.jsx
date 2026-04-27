@@ -11,6 +11,15 @@ import UserIcon from "./UserIcon";
 import { Button } from "../ui/button";
 import { links } from "../../utils/links";
 import { Link } from "react-router";
+import {
+  Show,
+  SignInButton,
+  SignInWithMetamaskButton,
+  SignOutButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/react";
+import SignOutLink from "./SignOutLink";
 
 const DropdownListMenu = () => {
   return (
@@ -27,13 +36,52 @@ const DropdownListMenu = () => {
 
         <DropdownMenuSeparator />
 
-        {links.map((item, index) => {
+        { links.map((item, index) => {
           return (
             <DropdownMenuItem key={index}>
               <Link to={item.href}>{item.label}</Link>
             </DropdownMenuItem>
           );
         })}
+
+        <Show when="signed-out">
+          <SignInButton mode="modal">
+            <DropdownMenuItem>
+              Login
+            </DropdownMenuItem>
+          </SignInButton>
+        </Show>
+
+        {/* <Show when="signed-out">
+          <SignUpButton mode="modal">
+            <DropdownMenuItem>
+              สมัครสมาชิก
+            </DropdownMenuItem>
+          </SignUpButton>
+        </Show> */}
+
+        <Show when="signed-in">
+
+          {/* <DropdownMenuItem>
+            <UserButton />
+          </DropdownMenuItem> */}
+
+          { links.map((item, index) => {
+          return (
+            <DropdownMenuItem key={index}>
+              <Link to={item.href}>{item.label}</Link>
+            </DropdownMenuItem>
+          );
+        })}
+
+          <SignOutButton>
+            <DropdownMenuItem>
+              <SignOutLink />
+            </DropdownMenuItem>
+          </SignOutButton>
+        </Show>
+
+
       </DropdownMenuContent>
     </DropdownMenu>
   );
