@@ -5,6 +5,12 @@
 @import "@fontsource-variable/playfair-display";
 @import "@fontsource-variable/jetbrains-mono";
 
+@layer components {
+  .container {
+    @apply px-8 mx-auto
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -130,4 +136,5 @@
   html {
     @apply font-mono;
     }
+
 }

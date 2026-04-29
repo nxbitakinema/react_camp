@@ -1,12 +1,12 @@
-import { Outlet } from "react-router"
-import Navbar from "../components/navbar/Navbar"
+import { Outlet } from "react-router";
+import Navbar from "../components/navbar/Navbar";
 
 const LayoutAdmin = () => {
   return (
-    <div>
+    <main className="container">
       <Navbar />
       <Outlet />
-    </div>
-  )
-}
-export default LayoutAdmin
+    </main>
+  );
+};
+export default LayoutAdmin;

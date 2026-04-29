@@ -6,27 +6,29 @@ import Manage from "../pages/admin/Manage";
 import Notfound from "../pages/Notfound";
 import Layout from "../layouts/Layout";
 import LayoutAdmin from "../layouts/LayoutAdmin";
+import Camping from "@/pages/admin/Camping";
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
 
-                {/* test  public  page  not  login */}
+                {/* public  page  not  login */}
                 <Route element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="about" element={<About />} />
                 </Route>
 
 
-                {/* test  private  page  request !! login  +  รูปแบบ path group  */}
+                {/* private  page  request !! login  +  รูปแบบ path group  */}
                 <Route path="admin" element={ <LayoutAdmin /> } >  
                     <Route index            element={   <Dashboard />  } />
                     <Route path="manage"   element={   <Manage />  } />
+                    <Route path="camping"   element={   <Camping />  } />
                 </Route>
                 
 
-                {/* test  page not found */}
+                {/* page not found */}
                 <Route path="*" element={  <Notfound />  } />
 
             </Routes>

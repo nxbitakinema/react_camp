@@ -3,14 +3,14 @@ import Navbar from "../components/navbar/Navbar";
 
 const Layout = () => {
   return (
-    <div>
+    <main className="container">
       <Navbar />
 
       <hr />
       {/*  Outlet  ไม่ใช่หน้าเป็นตัวโชว์ content ในหน้านั้นๆ */}
       <Outlet />
       
-    </div>
+    </main>
   );
 };
 export default Layout;
