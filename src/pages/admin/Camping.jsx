@@ -4,11 +4,10 @@ import { useForm } from "react-hook-form";
 
 const Camping = () => {
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();  // register, handleSubmit เป็นคำสั่งของ useForm
 
-  const testSumit = (data) => {
+  const testXxxxxSumit = (data) => {
     console.log(data);
-    
   }
 
   return (
@@ -19,7 +18,8 @@ const Camping = () => {
 
       <div className="border p-8 ">
 
-        <form onSubmit={ handleSubmit( testSumit ) }>
+        {/*   onSubmit, handleSubmit เป็นคำสั่งของ useForm   */}
+        <form onSubmit={ handleSubmit( testXxxxxSumit ) }>   
 
           <div className="grid md:grid-cols-2 gap-4 mt-4">
 

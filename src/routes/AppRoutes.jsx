@@ -20,11 +20,11 @@ const AppRoutes = () => {
                 </Route>
 
 
-                {/* private  page  request !! login  +  รูปแบบ path group  */}
+                {/* private  page  request !! login */}
                 <Route path="admin" element={ <LayoutAdmin /> } >  
                     <Route index            element={   <Dashboard />  } />
-                    <Route path="manage"   element={   <Manage />  } />
-                    <Route path="camping"   element={   <Camping />  } />
+                    <Route path="manage"    element={   <Manage />     } />
+                    <Route path="camping"   element={   <Camping />    } />
                 </Route>
                 
 

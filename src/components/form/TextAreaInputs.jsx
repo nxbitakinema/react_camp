@@ -1,3 +1,5 @@
+// TextAreaInput (กรอกข้อความยาว)
+
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 
@@ -15,7 +17,7 @@ const TextAreaInput = ({ register, name, type, placeholder }) => {
         placeholder={placeholder} 
         rows={5}
       />
-      
+
     </div>
   );
 };
