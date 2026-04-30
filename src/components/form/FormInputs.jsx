@@ -3,7 +3,7 @@
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-const FormInputs = ({ register, name, type, placeholder }) => {
+const FormInputs = ({ register, name, type, placeholder, errors }) => {
 
   return (
 
@@ -12,10 +12,13 @@ const FormInputs = ({ register, name, type, placeholder }) => {
       <Label htmlFor={name}>{name}</Label>
 
       <Input 
-        {...register(name)} 
+        {...register(name)}
         type={type} 
-        placeholder={placeholder} 
+        placeholder={placeholder}
+        className={ `${errors[name] && "bg-red-500"}` }
       />
+      {errors[name] && (
+        <p className="text-red-500 text-xs mt-2">{errors[name].message}</p>)}
 
     </div>
 

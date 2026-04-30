@@ -3,7 +3,7 @@
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 
-const TextAreaInput = ({ register, name, type, placeholder }) => {
+const TextAreaInput = ({ register, name, type, placeholder, errors }) => {
 
   return (
     
@@ -16,7 +16,10 @@ const TextAreaInput = ({ register, name, type, placeholder }) => {
         type={type} 
         placeholder={placeholder} 
         rows={5}
+        className={ `${errors[name] && "bg-red-500"}` }
       />
+      {errors[name] && (
+        <p className="text-red-500 text-xs mt-2 mb-2">{errors[name].message}</p>)}
 
     </div>
   );
