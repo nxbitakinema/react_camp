@@ -19,7 +19,7 @@ const TextAreaInput = ({ register, name, type, placeholder, errors }) => {
         className={ `${errors[name] && "bg-red-500"}` }
       />
       {errors[name] && (
-        <p className="text-red-500 text-xs mt-2 mb-2">{errors[name].message}</p>)}
+        <p className="text-red-500 text-xs mt-2">{errors[name].message}</p>)}
 
     </div>
   );

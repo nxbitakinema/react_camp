@@ -36,43 +36,28 @@ const DropdownListMenu = () => {
 
         <DropdownMenuSeparator />
 
-        { links.map((item, index) => {
+        {/* {links.map((item, index) => {
           return (
             <DropdownMenuItem key={index}>
               <Link to={item.href}>{item.label}</Link>
             </DropdownMenuItem>
           );
-        })}
+        })} */}
 
         <Show when="signed-out">
           <SignInButton mode="modal">
-            <DropdownMenuItem>
-              Login
-            </DropdownMenuItem>
+            <DropdownMenuItem>Login</DropdownMenuItem>
           </SignInButton>
         </Show>
 
-        {/* <Show when="signed-out">
-          <SignUpButton mode="modal">
-            <DropdownMenuItem>
-              สมัครสมาชิก
-            </DropdownMenuItem>
-          </SignUpButton>
-        </Show> */}
-
         <Show when="signed-in">
-
-          {/* <DropdownMenuItem>
-            <UserButton />
-          </DropdownMenuItem> */}
-
-          { links.map((item, index) => {
-          return (
-            <DropdownMenuItem key={index}>
-              <Link to={item.href}>{item.label}</Link>
-            </DropdownMenuItem>
-          );
-        })}
+          {links.map((item, index) => {
+            return (
+              <DropdownMenuItem key={index}>
+                <Link to={item.href}>{item.label}</Link>
+              </DropdownMenuItem>
+            );
+          })}
 
           <SignOutButton>
             <DropdownMenuItem>
@@ -80,8 +65,6 @@ const DropdownListMenu = () => {
             </DropdownMenuItem>
           </SignOutButton>
         </Show>
-
-
       </DropdownMenuContent>
     </DropdownMenu>
   );
