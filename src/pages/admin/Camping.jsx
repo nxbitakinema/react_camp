@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { campingSchema } from "@/utils/schemas";
 import Buttons from "@/components/form/Buttons";
 import CategoryInput from "@/components/form/CategoryInput";
+import Mainmap from "@/components/map/Mainmap";
 
 
 const Camping = () => {
@@ -71,6 +72,12 @@ const Camping = () => {
 
 
           </div>
+
+          
+
+          <Mainmap />
+
+          
 
           <Buttons text="create camping" isPending={isSubmitting} type="submit"/>
 
