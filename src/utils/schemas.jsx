@@ -5,6 +5,8 @@ export const campingSchema = z.object({
   price: z.coerce.number(),
   description: z.string().min(10, "Description must be at least 10 characters"),
   category: z.string(),
+  lat: z.coerce.number(),
+  lng: z.coerce.number(),
 });
 
 

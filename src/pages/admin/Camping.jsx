@@ -75,10 +75,14 @@ const Camping = () => {
 
           
 
-          <Mainmap />
+          <Mainmap 
+            register={register}
+            setValue={setValue}
+          />
 
           
 
+          <Buttons text="clear form" isPending={isSubmitting} type="reset" variant="ghost" />
           <Buttons text="create camping" isPending={isSubmitting} type="submit"/>
 
         </form>
