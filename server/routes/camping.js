@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {authCheck} = require("../middlewares/auth");
 const {
   listCamping,
   readCamping,
@@ -10,7 +11,7 @@ const {
 
 
 
-router.get("/camping", listCamping);
+router.get("/camping", authCheck, listCamping);
 
 router.get("/camping/:id", readCamping);
 
