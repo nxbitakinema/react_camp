@@ -3,18 +3,23 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const campingRoute = require( './routes/camping' )
+
 
 
 // middleware
-app.use( cors() )
+app.use( cors() )  // ยังไม่ลอง
+
+app.use( express.json() )  // ช่วยรับข้อมูลที่เป็น Json
 
 
-// ROUTING เพื่อไปที่ไหน method  GET, POST, PUT, PATCH, DELETE
-app.get( '/' , ( req,res ) => {
-    console.log("NX BACKEND is EASY");
-    // res.send("RES.SEND --> NX BACKEND is EASY")
-    res.json("RES.SEND --> NX BACKEND is EASY2")
-})
+
+// เรียกใช้
+app.use( '/' , campingRoute )
+
+
+
+
 
 
 const PORT = 5000;
