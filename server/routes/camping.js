@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {authCheck} = require("../middlewares/auth");
+const { authCheck } = require("../middlewares/auth");
 const {
   listCamping,
   readCamping,
@@ -8,8 +8,6 @@ const {
   updateCamping,
   deleteCamping,
 } = require("../controllers/camping");
-
-
 
 router.get("/camping", authCheck, listCamping);
 
@@ -20,6 +18,5 @@ router.post("/camping", createCamping);
 router.put("/camping/:id", updateCamping);
 
 router.delete("/camping/:id", deleteCamping);
-
 
 module.exports = router;
