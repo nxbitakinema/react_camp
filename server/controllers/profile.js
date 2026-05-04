@@ -1,9 +1,18 @@
-exports.createProfile = (req, res) => {
+const renderError = require("../utils/renderError");
+
+exports.createProfile = ( req, res, next ) => {
+
   try {
+
+    if ( true ) {
+      return renderError(401, "Token Invalid")
+    }
+
     res.json({ message: "hello create profile" });
-    console.log({ message: "hello create profile" });
+
   } catch (error) {
-    res.status(500).json({ message: "server error", error: error.message });
-    console.log({ error });
+
+    next(error)
+
   }
 };

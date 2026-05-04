@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const morgan = require("morgan");
 const { readdirSync } = require("fs");
+const handleError = require("./middlewares/error");
 
 // MIDDLEWARE
 app.use(cors()); // ยังไม่ลอง
@@ -12,6 +13,9 @@ app.use(morgan("dev"));
 
 // ENDPOINT USE
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+
+// HANDEL ERROR
+app.use( handleError )
 
 const PORT = 5000;
 app.listen(PORT, () => { console.log(`NX SERVER RUNNING port ${PORT}`); });
