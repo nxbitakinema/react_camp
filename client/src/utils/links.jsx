@@ -1,16 +1,21 @@
 export const links = [
   {
-    label: "Home",
+    href: "/user/profile",
+    label: "Profile",
+  },
+
+  {
     href: "/",
+    label: "Home",
   },
 
   {
-    label: "About",
     href: "/about",
+    label: "About",
   },
 
   {
-    label: "Camping",
     href: "/admin/camping",
+    label: "Camping",
   },
 ];

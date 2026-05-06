@@ -4,10 +4,14 @@ exports.createProfile = ( req, res, next ) => {
 
   try {
 
-    if ( true ) {
-      return renderError(401, "Token Invalid")
+    const { firstname , lastname, clerkid } = req.body
+
+    if( true ) {
+      return renderError( 400, 'มันมีปัญหานะมาจาก controller profile')
     }
 
+    console.log( firstname , lastname, clerkid )
+    
     res.json({ message: "hello create profile" });
 
   } catch (error) {

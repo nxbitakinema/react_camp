@@ -7,6 +7,7 @@ import Notfound from "../pages/Notfound";
 import Layout from "../layouts/Layout";
 import LayoutAdmin from "../layouts/LayoutAdmin";
 import Camping from "@/pages/admin/Camping";
+import Profile from "@/pages/user/Profile";
 
 const AppRoutes = () => {
     return (
@@ -19,8 +20,13 @@ const AppRoutes = () => {
                     <Route path="about" element={<About />} />
                 </Route>
 
+                {/* PRIVATE  USER */}
+                <Route path="user" element={ <Layout /> } > 
+                    <Route path="profile" element={ <Profile /> } />
+                </Route>
 
-                {/* private  page  request !! login */}
+
+                {/* private  admin */}
                 <Route path="admin" element={ <LayoutAdmin /> } >  
                     <Route index            element={   <Dashboard />  } />
                     <Route path="manage"    element={   <Manage />     } />
